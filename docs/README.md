@@ -1,3 +1,3 @@
 # GAMMA/PyGAMMA Documentation
 
-Hellow from PyGAMMA world.
+Hello from PyGAMMA world.
