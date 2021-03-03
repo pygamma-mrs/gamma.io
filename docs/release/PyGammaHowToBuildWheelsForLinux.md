@@ -30,6 +30,7 @@ If you don't already have a CentOS 7 virtual machine, now is the time to build o
 1. Get the GAMMA source code onto your CentOS machine via SVN or any other way
  you like.
 1. `cd gamma/platforms/Linux`
+1. (optional) `make clean`          remove previous compile files
 1. `make pysgdist`
 1. `cd ../../pygamma`
 1. `python setup.py bdist_wheel`
