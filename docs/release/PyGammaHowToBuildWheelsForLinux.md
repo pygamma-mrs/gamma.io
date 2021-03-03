@@ -34,16 +34,26 @@ If you don't already have a CentOS 7 virtual machine, now is the time to build o
 1. `cd ../../pygamma`
 1. `python setup.py bdist_wheel`
 
-The last step creates the wheel file in the `dist` directory. As of this writing, the wheel package doesn't know about the `manylinux1` standard described in PEP 513, so the wheel is inappropriately named. For instance, the wheel I created was named this --
+The last step creates the wheel file in the `dist` directory. As of this writing, the wheel package doesn't know about the `manylinux2014` standard described in PEP 513, so the wheel is inappropriately named. For instance, the wheel I created was named this --
 ```
 pygamma-4.3.3-cp27-cp27mu-linux_x86_64.whl
 ```
 I manually renamed it to this -- 
 ```
-pygamma-4.3.3-cp27-cp27mu-manylinux1_x86_64.whl
+pygamma-4.3.3-cp27-cp27mu-manylinux2014_x86_64.whl
 ```
 
 You might also need to rename the wheel you create.
+
+## Testing the Wheel
+
+1. (optional) In the `gamma/pygamma/dist` directory, type `pip uninstall pygamma` to remove current package
+1. In the `gamma/pygamma/dist` directory, type `pip install <wheel name>` to install package
+1. (optional) You may need to run dos2unix on the \*.sys and \*.txt files in `gamma/src/PyTests`
+1. Change to `gamma/src/PyTests` directory, type `python ../Tests/run_tests.py -v `
+1. PyGamma test results will print out in cmd window
+
+
 
 ## Notes about the Linux Makefile
 

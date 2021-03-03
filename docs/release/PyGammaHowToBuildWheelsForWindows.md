@@ -49,6 +49,7 @@ For the dynamic project (and subsequent creation of the pygamma module) tests ca
 1. ... assuming no compile or test errors in static build and Gamma C++ tests
 1. (optional) C++ tests can also be run manually by changing to `gamma\src\Tests` directory, type `python run_tests.py -v -p ..\\..\\i686-pc-msvc\\`
 1. Open `gamma\platforms\msvc2017\dynamic\gamma.sln`
+1. (optional) May need to set 'Release' and 'x64' options in top menu bar.
 1. Clean/Build this solution 
 1. In the `gamma\pygamma` directory, open a cmd window, type `python setup.py bdist_wheel`. NB. The python version you call here must match the one used in your compile above.
 1. (optional) In the `gamma\pygamma\dist` directory, type `pip uninstall pygamma` to remove current package
