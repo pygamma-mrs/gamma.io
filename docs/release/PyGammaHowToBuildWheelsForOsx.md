@@ -23,7 +23,7 @@ This document assumes you are building a 64-bit PyGamma.
  - `pip install wheel`
 1. Switch to the desired miniconda environment before doing the "Build PyGamma" steps below.
 
-## Install [SWIG](http://www.swig.org).
+## Download and Build [SWIG](http://www.swig.org).
 
 1. Download and untar the SWIG source code. I was able to use the latest (4.0.2 as of this writing).
 1. Build with `sudo ./configure && sudo make && sudo make install`

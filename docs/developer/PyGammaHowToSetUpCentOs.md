@@ -16,43 +16,84 @@ CentOS 7 will be supported (albeit only with critical security updates) until 20
 
 ## Installation in VirtualBox
 
-I downloaded the CentOS7 ISO 'CentOS-7-x86_64-DVD-1908.iso' and created a new VirtualBox VM. 
+- I downloaded the CentOS7 ISO 'CentOS-7-x86_64-DVD-1908.iso' and created a new VirtualBox VM. 
 
-In VirtualBox, File->NewMachine. Enter a name, select Red Hat and 64bit. Next, give it >= 4Gb RAM. Next, create a VDI format hard drive. Next, make it dynamically mounted. Next, set max hard drive to 500GB. Hit Create.
+- In VirtualBox 
+  - File->NewMachine. Enter a name, select Red Hat and 64bit. 
+  - Next, give it >= 4Gb RAM. 
+  - Next, create a VDI format hard drive. 
+  - Next, make it dynamically mounted. 
+  - Next, set max hard drive to 500GB. 
+  - Hit Create.
 
-Select that VM from the list. Open settings. Under Storage, click on empty CDRom. Mount the CentOS7 ISO image to the CD. Under Display, set the video memory a bit larger (64Mb), make sure Graphics Controller is VMSVGA (for bigger screen?). 
+- Select that VM from the list. 
+  - Open settings. Under Storage, click on empty CDRom. 
+  - Mount the CentOS7 ISO image to the CD. 
+  - Under Display, set the video memory a bit larger (64Mb), make sure Graphics Controller is VMSVGA (for bigger screen?). 
 
-Boot the machine. On first screen, select 'Install CentOS7'.  Eventually, the installer wizard will fill the screen.
+- Boot the machine. On first screen, select 'Install CentOS7'. Eventually, the installer wizard will fill the screen.
 
-Installation wizard. Select English. Next screen is Installation Summary. Set Date and Time if needed. 
-
-Click Software Selection. Make Base Environment 'GNOME Desktop'. For Add-Ons:  'Development tools' and 'SysAdmin' and 'GNOME Applications'. Click Done. 
+- **Installation wizard**
+  - Select English. 
+  - Next screen is Installation Summary. 
+    - Set Date and Time if needed. 
+    - Click 'Software Selection'. 
+      - Make 'Base Environment' 'GNOME Desktop'. 
+      - For 'Add-Ons':  'Development tools', 'SysAdmin' and 'GNOME Applications'. 
+      - Click Done. 
+  - 'Installation Destination' had the orange warning icon, so required some setup
+    - Click on it and then on Done because the defaults were fine. 
+  - Click on Begin Installation. 
   
-Installer wizard also wanted me to set up Installation Destination (it had the orange warning icon) so I clicked on it and then on Done because the defaults were fine. 
+- The install moved on to the **Create User** page. 
+  - Set up a root passwd. Click Done. 
+  - Set up user name and passwd. 
+    - Save these somewhere safe.  
+    - I made bsoher administrator as it allows me sudo rights after I log in.  
+    - Clicked on Done. 
+    
+- The install 'thought' for a while (5-10 min) installing ~1500 packages and then about 'Performing post-installation setup tasks'. 
 
-I then clicked on Begin Installation. 
+- It finally said 'Complete' and offered a 'Reboot' button. 
 
-The install moved on to the Create User page. Set up a root passwd. Click Done. Set up user name and passwd. Save these somewhere safe.  I made bsoher administrator just for kicks, also it seems to allow me sudo rights after I logged in.  Clicked on Done. 
-
-The install 'thought' for a while (5-10 min) installing ~1500 packages and then about 'Performing post-installation setup tasks'. It finally said 'Complete' and offered a 'Reboot' button. I hit the Reboot button.
+- Hit the Reboot button.
 
 ## First Reboot
 
-Ended up in another wizard - Initial Setup
-
-Clicked on Licesnse Information.  Accepted the license, clicked Done.
-
-Click FInish Configureation, and it rebooted.
+- Ended up in another wizard - Initial Setup
+- Click on License Information.  Accept the license, click Done.
+- Click Finish Configuration, and it reboots
 
 ## First Login
 
-It offered to log me (Brian Soher - user created during install) in.  There were a few GUI setup bits. Then a Getting Started ran.  I closed it.
+On reboot, the user you created (bsoher for me) is available for login.  
+ - There were a few GUI setup bits. 
+ - Then a Getting Started ran.  I closed it.
 
-Ran a Terminal. Typed >gcc -v  and  >swig -version.  I found that gcc and gcc-c++ were already installed (v 4.8.5), swig was installed but way earlier version (v 2.0.10). I used NAT to attach the network, but had to enable wired network in the Power drop menu (top right). 
+Ran a Terminal. Typed `>gcc -v`  and  `>swig -version`.  
+- Found that gcc and gcc-c++ were already installed (v 4.8.5)
+- swig was installed but way earlier version (v 2.0.10)
 
-On the first reboot after installation was complete, CentOS will update itself with the latest patches.
+Had to enable wired network in the Power drop menu (top right) 
 
-Next, you'll want to install VirtualBox guest additions to make the guest OS easier to use. In order to do that, you first have to add yourself to the `sudoers` file.
+Next few steps recommended from: https://itekblog.com/centos-7-virtualbox-guest-additions-installation-centos-minimal/
+
+Update the OS and kernel, (could be 1000+ packages to update). And the kernel update may not be needed after the general OS update:
+
+`>su root (enter passwd)`
+`>yum update `            
+`>reboot`
+
+Log back in, switch to root:
+
+`>yum update kernel`      (may be done already by previous step)
+`>reboot`
+
+Log back in, switch to root:
+
+`>yum install kernel-devel`
+
+Next, you'll want to install VirtualBox guest additions to make the guest OS easier to use. In order to do that, you first have to add yourself to the `sudoers` file (if you aren't already there as part of the OS install).
 
 ## (deprecated) Adding Yourself to sudoers
 
@@ -69,53 +110,57 @@ Likely you will need to login as root to do this.
 
 ## Building VirtualBox Guest Additions
 
-Next few steps from: https://itekblog.com/centos-7-virtualbox-guest-additions-installation-centos-minimal/
-
->su root (enter passwd)
-
->yum update             (could be 1000+ packages to update)
->reboot
-
->yum update kernel      (may be done already by previous step)
->reboot
-
->yum install kernel-devel
-
-From the Virtual Box -> Devices menu, select Insert Guest Additions CD Image. The CD icon will appear and you will be asked if you want to AutoRun the install process.  Click yes, and wait a bit.  You should see things being 'built' and installed.  Need to reboot for changes to take effect (I think).
+- From the Virtual Box -> Devices menu, select Insert Guest Additions CD Image. 
+- The CD icon will appear and you will be asked if you want to AutoRun the install process.  
+- Click yes, and wait a bit.  You should see things being 'built' and installed. 
+- Need to reboot for changes to take effect (I think).
 
 ## Create Shared Folder to Host to CentOS7
 
-Poweroff the CentOS7 machine.  In VirtualBox Settings, Shared Folders, add new folder.  I told it to grab 'D:\users\bsoher', auto mount it, and mount it at '/home/bsoher/sf_bsoher'. And close.  
-
-Restart CentOS7 machine.
-
-You should see the new folder, but have limited permissions to access (as in non-stop typing of my admn passwd). So do this.
-
-Run a Terminal.  
-
->sudo usermod -aG vboxsf bsoher
-
-Restart the CentOS7 machine. And now I can cruise around that directory with no problems.
+- Poweroff the CentOS7 machine.  
+- In VirtualBox Settings, Shared Folders, add new folder.  
+  - Set host source as 'D:\users\bsoher' 
+  - Click 'auto mount' box.
+  - Set client mount name as '/home/bsoher/sf_bsoher'. 
+  - And close.  
+- Start CentOS7 machine.
+- You should see the new folder in your home directory
+  - access permissions are limited at this point (as in non-stop typing of my admn passwd)
+- Run a Terminal
+  - `>sudo usermod -aG vboxsf bsoher`
+- Restart the CentOS7 machine. And now I can cruise around that directory with no problems.
 
 ## Adding Packages
 
-Switch to root for this. Make sure internet connected. Check that these packages are installed: `xz zlib zlib-devel openssl-devel pcre-devel sqlite-devel`. I did it using:
+- Switch to root for this. Make sure internet connected. 
+- Check that these packages are installed: `xz zlib zlib-devel openssl-devel pcre-devel sqlite-devel`. 
+- Do this using:
 
->rpm -qa | grep <pkg-name>
+    `>rpm -qa | grep <pkg-name>`
 
-and found only xz and zlib installed.  So, I did the following:
+    I found only 'xz' and 'zlib' installed.  So, I did the following:
 
->yum install xz zlib zlib-devel openssl-devel pcre-devel sqlite-devel
+    `>yum install xz zlib zlib-devel openssl-devel pcre-devel sqlite-devel`
 
 ## Building Python
 
-CentOS 7 comes with Python 2.7. To use a newer Python, I used the Miniconda installer script. Based on some vague advice from Google I downloded Miniconda2 since CentOS 7 system Python is 2.7.5.  I used the 'conda' command to set up a python 3.7 environment.
+CentOS 7 comes with Python 2.7, but this is the system version and you should not use/change it. 
+- Install a modern 64-bit Python in your path. 
+  - I used the [Miniconda](https://docs.conda.io/en/latest/miniconda.html) 64 bit Python 3 installer script for Linux. 
+  - Once miniconda is installed, set up a python 3.7 environment:
+    `conda create --name python37 python=3.7` 
+   Change the name or python version as needed for your compile
+  - (optional) You can also compile for any other Python version for which you set up an environment. 
+- Install the `wheel` package in your conda environment. One of the below steps should work:
+ - `conda install wheel`
+ - `conda install -c conda-forge wheel`
+ - `pip install wheel`
 
 ## Download and Install pip
 
 Pip comes with Miniconda and Python 3.7 environment as does setuptools and wheel, both of which we need.
 
-## Download and Build SWIG
+## Download and Build [SWIG](http://www.swig.org).
 
 1. Download and untar the SWIG source code. I was able to use the latest (4.0.2 as of this writing).
 1. Build with `sudo ./configure && sudo make && sudo make install`
