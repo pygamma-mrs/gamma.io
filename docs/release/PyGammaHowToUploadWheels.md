@@ -119,3 +119,5 @@ If that goes well, you can register on the production (real) PyPI:
 ```
 python setup.py register
 }}}
+```
+
