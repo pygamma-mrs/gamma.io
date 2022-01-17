@@ -17,7 +17,7 @@ The following sequence of builds and tests should work without any issues. You m
 
 Select items on this list require a working version of Python (>= 2.5) to be installed, and are marked with a (P). And some items require Swig (S). 
 
-Go to the build instructions for [GAMMA](/wiki:GammaBuildingLibrary/) and [PyGAMMA](/wiki:PyGamma#BuildingPyGAMMA/) for details.
+Go to the build instructions for [GAMMA](../../docs/release/GammaBuildingLibrary.md) and [PyGAMMA](/wiki:PyGamma#BuildingPyGAMMA/) for details.
 
 We're assuming you start in the gamma/platforms/Linux or gamma/platforms/OSX directory.
 

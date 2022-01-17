@@ -19,7 +19,7 @@ These steps are explained in detail below.
 
 ## Satisfy Prerequsities (All Platforms)
 
-1. Follow the [GammaBuildingLibrary#DownloadtheCode instructions for downloading the code].
+1. Follow the ["Download the Code"](GammaBuildingLibrary.md) instructions for downloading the code.
 1. Install Python if you haven't already.
 1. Install [SWIG](http://www.swig.org/).
 1. Install a compiler (see platform-specific instructions below).

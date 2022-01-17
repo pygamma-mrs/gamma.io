@@ -12,11 +12,11 @@ Please note that we have a separate page that describes [how to build PyGamma](P
 
 ## Download the Code
 
-GAMMA's source code is stored in a [Subversion](http://subversion.apache.org/) (SVN) repository. If you do not have an SVN client, you will need to get one. [TortoiseSVN](http://tortoisesvn.net/) is popular under Windows.
+GAMMA's source code is stored in a [GitHub](http://github.com/) repository. If you do not have a Git installed on your computer, you will need to install it from  [here](https://git-for-windows.github.io/) for windows.  If you're on Lixux/MacOS it's likely already installed. On Windows you can also install an GUI based client, [TortoiseGit](http://tortoisegit.net/) is a popular one.
 
-Once you have an SVN client, open a command prompt, go to your development directory and enter the following command:
+Once you have Git installed, open a Git command prompt, go to your development directory and enter the following command:
 ```
-svn co http://scion.duhs.duke.edu/guest_svn/gamma/trunk gamma
+git clone https://github.com/pygamma-mrs/gamma.git
 ```
 
 ## Install a C++ Compiler
@@ -33,7 +33,7 @@ You might want to consider installing an [optimized linear algebra library](../t
 
 ## Install Python (Optionally, for Testing)
 
-The tests use [Python](http://www.python.org/) as well as the Python libraries [numpy](http://numpy.scipy.org/) and [SciPy](http://www.scipy.org/). Many Linux systems have Python installed already.
+The tests use [Python](http://www.python.org/) as well as the Python libraries [numpy](http://numpy.scipy.org/) and [SciPy](http://www.scipy.org/). Many Linux systems have Python installed already, but be careful not to mess up your 'system' Python installation.
 
 # Building GAMMA on Linux and OSX
 
