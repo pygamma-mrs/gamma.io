@@ -17,9 +17,9 @@ For more information, refer to our [detailed description of GAMMA](../docs/techn
 
 ## How To Get GAMMA and PyGamma
 
-We have [instructions on how to download and build GAMMA](../docs/release/GammaBuildingLibrary.md).
+We have [instructions on how to download and build GAMMA](../gamma.io/docs/release/GammaBuildingLibrary.md).
 
-You can [install PyGamma with Python's pip](../docs/installing/PyGamma.md).
+You can [install PyGamma with Python's pip](../gamma.io/docs/installing/PyGamma.md).
 
 ## Documentation
 
@@ -34,7 +34,7 @@ For the very ambitious, we have [archived the HTML from the old GAMMA Web site](
 
 ## Developer (Technical) Documentation
 
-If you're interested in more technical details about GAMMA/PyGamma including notes from the developers themselves, or suggestions on how to contribute to PyGAMMA/GAMMA, we have a whole section dedicated to [developer documentation](../docs/technical/README.md).
+If you're interested in more technical details about GAMMA/PyGamma including notes from the developers themselves, or suggestions on how to contribute to PyGAMMA/GAMMA, we have a whole section dedicated to [developer documentation](../gamma.io/docs/technical/README.md).
 
 
 ## Proper Citation in Papers and Presentations
@@ -46,4 +46,4 @@ Proper reference should be given, using the citation below, when GAMMA simulatio
 ## Thanks
 Thanks to the ** *NIH* (*grant number 1R01EB008387-01A1*) ** which funded the recent work on PyGAMMA/GAMMA and this website via the [Vespa project](http://github.com/vespa-mrs/vespa).
 
-Thanks also to those who have [contributed their time and skills](../docs/history/GammaContributors.md) to PyGAMMA/GAMMA.
+Thanks also to those who have [contributed their time and skills](../gamma.io/docs/history/GammaContributors.md) to PyGAMMA/GAMMA.
