@@ -46,4 +46,4 @@ Proper reference should be given, using the citation below, when GAMMA simulatio
 ## Thanks
 Thanks to the ** *NIH* (*grant number 1R01EB008387-01A1*) ** which funded the recent work on PyGAMMA/GAMMA and this website via the [Vespa project](http://github.com/vespa-mrs/vespa).
 
-Thanks also to those who have [contributed their time and skills](../gamma.io/docs/history/GammaContributors.md) to PyGAMMA/GAMMA.
+Thanks also to those who have [contributed their time and skills](history/GammaContributors.md) to PyGAMMA/GAMMA.
