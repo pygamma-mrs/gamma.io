@@ -12,14 +12,14 @@ sort: 1
 
 Both PyGamma/GAMMA and  work on OS X, Linux, and Windows.
 
-For more information, refer to our [detailed description of GAMMA](../docs/technical/gamma/GammaDetailedDescription.md) and our [main PyGamma page](../docs/installing/PyGamma.md).
+For more information, refer to our [detailed description of GAMMA](technical/gamma/GammaDetailedDescription.md) and our [main PyGamma page](../docs/installing/PyGamma.md).
 
 
 ## How To Get GAMMA and PyGamma
 
-We have [instructions on how to download and build GAMMA](../gamma.io/docs/release/GammaBuildingLibrary.md).
+We have [instructions on how to download and build GAMMA](release/GammaBuildingLibrary.md).
 
-You can [install PyGamma with Python's pip](../gamma.io/docs/installing/PyGamma.md).
+You can [install PyGamma with Python's pip](installing/PyGamma.md).
 
 ## Documentation
 
@@ -34,7 +34,7 @@ For the very ambitious, we have [archived the HTML from the old GAMMA Web site](
 
 ## Developer (Technical) Documentation
 
-If you're interested in more technical details about GAMMA/PyGamma including notes from the developers themselves, or suggestions on how to contribute to PyGAMMA/GAMMA, we have a whole section dedicated to [developer documentation](../gamma.io/docs/technical/README.md).
+If you're interested in more technical details about GAMMA/PyGamma including notes from the developers themselves, or suggestions on how to contribute to PyGAMMA/GAMMA, we have a whole section dedicated to [developer documentation](technical/README.md).
 
 
 ## Proper Citation in Papers and Presentations
